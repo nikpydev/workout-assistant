@@ -32,7 +32,7 @@ const Footer = () => {
     >
       <div className="container-fluid">
         <Link href={'/'}>
-          <a className="navbar-brand" href="#" onClick={toggleDropdownState}>
+          <a className="navbar-brand" href="#">
             Workout Assistant
           </a>
         </Link>

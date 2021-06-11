@@ -2,6 +2,23 @@
   "name": "workout-assistant",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Nikhil Choudhary",
+    "email": "nik.exynos@gmail.com",
+    "url": "https://nikpydev.github.io/portfolio"
+  },
+  "tags": [
+    "workout",
+    "workout assistant",
+    "workout-assistant",
+    "workout timer"
+  ],
+  "repository": {
+    "type": "public",
+    "url": "https://github.com/nikpydev/workout-assistant",
+    "directory": ""
+  },
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,6 +26,7 @@
     "prettier:format": "prettier --write ."
   },
   "dependencies": {
+    "bootstrap": "^5.0.1",
     "next": "10.2.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",

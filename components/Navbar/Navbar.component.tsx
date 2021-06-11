@@ -5,7 +5,8 @@ import { useRouter } from 'next/router';
 
 export enum Sections {
   HOMEPAGE = '/',
-  PUSH_UP_COUNTER = '/PushUpCounter'
+  PUSH_UP_COUNTER = '/PushUpCounter',
+  ABOUT = '/About'
 }
 
 const Footer = () => {
@@ -15,11 +16,22 @@ const Footer = () => {
   const router = useRouter();
 
   useEffect(() => {
-    setSection(
-      router.route === Sections.HOMEPAGE
-        ? Sections.HOMEPAGE
-        : Sections.PUSH_UP_COUNTER
-    );
+    switch (router.route) {
+      case Sections.HOMEPAGE:
+        setSection(Sections.HOMEPAGE);
+        break;
+
+      case Sections.PUSH_UP_COUNTER:
+        setSection(Sections.PUSH_UP_COUNTER);
+        break;
+
+      case Sections.ABOUT:
+        setSection(Sections.ABOUT);
+        break;
+
+      default:
+        setSection(Sections.HOMEPAGE);
+    }
   }, [router]);
 
   const toggleDropdownState = () => {
@@ -32,9 +44,7 @@ const Footer = () => {
     >
       <div className="container-fluid">
         <Link href={'/'}>
-          <a className="navbar-brand" href="#">
-            Workout Assistant
-          </a>
+          <a className="navbar-brand">Workout Assistant</a>
         </Link>
 
         <button
@@ -61,10 +71,22 @@ const Footer = () => {
                     section === Sections.PUSH_UP_COUNTER && 'active'
                   }`}
                   aria-current="page"
-                  href="#"
                   onClick={toggleDropdownState}
                 >
                   Push Up Counter
+                </a>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link href={'/About'}>
+                <a
+                  className={`nav-link ${
+                    section === Sections.ABOUT && 'active'
+                  }`}
+                  aria-current="page"
+                  onClick={toggleDropdownState}
+                >
+                  About the Developer
                 </a>
               </Link>
             </li>

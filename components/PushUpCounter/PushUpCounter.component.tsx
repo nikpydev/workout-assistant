@@ -12,7 +12,11 @@ const PushUpCounter = () => {
   };
 
   const decreaseCount = () => {
-    setPushUpCount((prevState) => prevState + 1);
+    pushUpCount > 0 && setPushUpCount((prevState) => prevState + 1);
+  };
+
+  const resetCount = () => {
+    setPushUpCount(0);
   };
 
   return (
@@ -23,7 +27,7 @@ const PushUpCounter = () => {
         <div className={styles.leftArrow} onClick={increaseCount}>
           <LeftArrowIcon />
         </div>
-        <div className={styles.resetArrow} onClick={increaseCount}>
+        <div className={styles.resetArrow} onClick={resetCount}>
           <ResetArrowIcon />
         </div>
         <div className={styles.rightArrow} onClick={decreaseCount}>

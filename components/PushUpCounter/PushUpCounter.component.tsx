@@ -12,7 +12,7 @@ const PushUpCounter = () => {
   };
 
   const decreaseCount = () => {
-    pushUpCount > 0 && setPushUpCount((prevState) => prevState + 1);
+    pushUpCount > 0 && setPushUpCount((prevState) => prevState - 1);
   };
 
   const resetCount = () => {

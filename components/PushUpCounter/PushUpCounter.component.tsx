@@ -24,13 +24,13 @@ const PushUpCounter = () => {
       <h1 className={styles.sectionHeader}>Push Up Counter</h1>
       <h3 className={styles.pushUpCount}>{pushUpCount}</h3>
       <div className={styles.buttonsContainer}>
-        <div className={styles.leftArrow} onClick={increaseCount}>
+        <div className={styles.leftArrow} onClick={decreaseCount}>
           <LeftArrowIcon />
         </div>
         <div className={styles.resetArrow} onClick={resetCount}>
           <ResetArrowIcon />
         </div>
-        <div className={styles.rightArrow} onClick={decreaseCount}>
+        <div className={styles.rightArrow} onClick={increaseCount}>
           <RightArrowIcon />
         </div>
       </div>

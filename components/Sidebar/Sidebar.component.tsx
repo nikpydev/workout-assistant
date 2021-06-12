@@ -2,6 +2,8 @@ import { FC } from 'react';
 import ListItem from '../ListItem/ListItem.component';
 import Link from 'next/link';
 import styles from './Sidebar.module.scss';
+import HamburgerIcon from '../Icons/HamburgerIcon.component';
+import CloseIcon from '../Icons/CloseIcon.component';
 
 interface SidebarProps {
   isNavbarVisible: boolean;
@@ -15,13 +17,9 @@ const Sidebar: FC<SidebarProps> = ({
   const renderSidebar = () => {
     return (
       <nav className={styles.sidebar}>
-        <button
-          className={styles.closeButton}
-          type={'button'}
-          onClick={toggleNavbarVisibility}
-        >
-          X
-        </button>
+        <div className={styles.closeButton} onClick={toggleNavbarVisibility}>
+          <CloseIcon width={20} height={20} />
+        </div>
         <Link href={'/'}>
           <a>
             <ListItem label={'HOME'} />
@@ -43,12 +41,12 @@ const Sidebar: FC<SidebarProps> = ({
 
   const renderHamburgerMenuIcon = () => {
     return (
-      <button
+      <div
         className={styles.hamburgerMenuIcon}
         onClick={toggleNavbarVisibility}
       >
-        Show Sidebar
-      </button>
+        <HamburgerIcon height={60} width={60} />
+      </div>
     );
   };
 

@@ -17,16 +17,15 @@
 
 .closeButton {
   align-self: flex-end;
-  margin: 5px;
+  margin-top: 15px;
+  margin-right: 15px;
   cursor: pointer;
-  background-color: #777;
-  border-radius: 50%;
-  border: none;
-  color: #fff;
-  width: 32px;
+  fill: #fff;
+  margin-bottom: 50px;
 }
 
 .hamburgerMenuIcon {
-  width: max-content;
   position: fixed;
+  fill: #fff;
+  cursor: pointer;
 }

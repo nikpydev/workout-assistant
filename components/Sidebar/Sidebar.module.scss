@@ -9,6 +9,18 @@
   display: flex;
   flex-direction: column;
   border-right: 1px solid #aaa;
+
+  @media only screen and (max-width: 900px) {
+    width: 30vw;
+  }
+  
+  @media only screen and (max-width: 650px) {
+    width: 40vw;
+  }
+  
+  @media only screen and (max-width: 500px) {
+    width: 100vw;
+  }
 }
 
 .listGroup {
@@ -20,12 +32,12 @@
   margin-top: 15px;
   margin-right: 15px;
   cursor: pointer;
-  fill: #fff;
+  fill: #aaa;
   margin-bottom: 50px;
 }
 
 .hamburgerMenuIcon {
   position: fixed;
-  fill: #fff;
+  fill: #aaa;
   cursor: pointer;
 }

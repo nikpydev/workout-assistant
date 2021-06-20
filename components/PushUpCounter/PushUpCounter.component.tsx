@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import LeftArrowIcon from '../../public/left-arrow.svg';
-import RightArrowIcon from '../../public/right-arrow.svg';
-import ResetArrowIcon from '../../public/reset-arrow.svg';
+import LeftArrowIcon from '../Icons/LeftArrowIcon.component';
+import RefreshIcon from '../Icons/RefreshIcon.component';
+import RightArrowIcon from '../Icons/RightArrowIcon.component';
 import styles from './PushUpCounter.module.scss';
 
 const PushUpCounter = () => {
@@ -28,7 +28,7 @@ const PushUpCounter = () => {
           <LeftArrowIcon />
         </div>
         <div className={styles.resetArrow} onClick={resetCount}>
-          <ResetArrowIcon />
+          <RefreshIcon />
         </div>
         <div className={styles.rightArrow} onClick={increaseCount}>
           <RightArrowIcon />

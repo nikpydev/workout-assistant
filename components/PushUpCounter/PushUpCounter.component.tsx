@@ -75,7 +75,7 @@ const PushUpCounter = () => {
 
   const renderTimerCount = () => {
     return (
-      <h3 className={styles.pushUpCount}>
+      <h3 className={styles.counterText}>
         {timer && `${timer} seconds remaining`}
       </h3>
     );

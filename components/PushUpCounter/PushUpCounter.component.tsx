@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import LeftArrowIcon from '../Icons/LeftArrowIcon.component';
 import RefreshIcon from '../Icons/RefreshIcon.component';
 import RightArrowIcon from '../Icons/RightArrowIcon.component';

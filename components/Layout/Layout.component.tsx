@@ -1,5 +1,4 @@
 import React, { FC, Fragment, useState } from 'react';
-// import Navbar from '../Navbar/Navbar.component';
 import Sidebar from '../Sidebar/Sidebar.component';
 import Footer from '../Footer/Footer.component';
 import Head from 'next/head';
@@ -23,8 +22,6 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         <meta name="description" content="Workout Assistant Web Application" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      {/* <Navbar /> */}
 
       <Sidebar
         isNavbarVisible={isNavbarVisible}

@@ -3,9 +3,21 @@ import LeftArrowIcon from '../Icons/LeftArrowIcon.component';
 import RefreshIcon from '../Icons/RefreshIcon.component';
 import RightArrowIcon from '../Icons/RightArrowIcon.component';
 import styles from './PushUpCounter.module.scss';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const DefaultCountdownTimerValue = 150;
 let timerInstance: any;
+
+export const containerVariants = {
+  hidden: {
+    opacity: 0,
+    x: '100vw'
+  },
+  visible: {
+    opacity: 1,
+    x: 0
+  }
+};
 
 const PushUpCounter = () => {
   const [pushUpCount, setPushUpCount] = useState<number>(0);
@@ -76,22 +88,30 @@ const PushUpCounter = () => {
   const renderTimerCount = () => {
     return (
       <h3 className={styles.counterText}>
-        {timer && `${timer} seconds remaining`}
+        {timer ? `🔴${timer} seconds remaining` : '🟢'}
       </h3>
     );
   };
 
   return (
-    <div>
-      {renderTitleText()}
-      {!!timer && renderTimerCount()}
-      <h3 className={styles.pushUpCount}>Set: {pushUpCount}</h3>
-      <div className={styles.buttonsContainer}>
-        {renderDecrementButton()}
-        {renderResetButton()}
-        {!timer && renderIncrementButton()}
-      </div>
-    </div>
+    <AnimatePresence>
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        {renderTitleText()}
+
+        {renderTimerCount()}
+
+        <h3 className={styles.pushUpCount}>Set: {pushUpCount}</h3>
+        <div className={styles.buttonsContainer}>
+          {renderDecrementButton()}
+          {renderResetButton()}
+          {!timer && renderIncrementButton()}
+        </div>
+      </motion.div>
+    </AnimatePresence>
   );
 };
 
